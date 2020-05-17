@@ -88,7 +88,12 @@ defmodule Slack.Bot do
       client: client,
       token: token,
       me: rtm.self,
-      team: rtm.team
+      team: rtm.team,
+      channels: %{},
+      users: %{},
+      groups: %{},
+      bots: %{},
+      ims: %{},
     }
 
     {:reconnect, %{slack: slack, bot_handler: bot_handler, process_state: initial_state}}
